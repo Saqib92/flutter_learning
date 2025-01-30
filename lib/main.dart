@@ -31,6 +31,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var myArr = ['najam', 'saqib', 'stobry', 'khadija'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,37 +45,16 @@ class _MyHomePageState extends State<MyHomePage> {
           // the App.build method, and use it to set our appbar title.
           title: Text(widget.title, style: TextStyle(color: Colors.white)),
         ),
-        body: Center(
-          child: ListView(
-            scrollDirection: Axis.vertical,
-            children: [
-              InkWell(
-                onTap: (){
-                    print('from inkwell');
-                },
-                child: Padding(
-                  padding: EdgeInsets.all(8),
-                  child: Text('One'),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(8),
-                child: Text('2'),
-              ),
-              Padding(
-                padding: EdgeInsets.all(8),
-                child: Text('3'),
-              ),
-              Padding(
-                padding: EdgeInsets.all(8),
-                child: Text('4'),
-              ),
-              Padding(
-                padding: EdgeInsets.all(8),
-                child: Text('5'),
-              ),
-            ],
-          ),
+        body: ListView.builder(
+          scrollDirection: Axis.vertical,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: EdgeInsets.all(10),
+              child: Text(myArr[index]),
+            );
+          },
+          itemCount: myArr.length,
+          itemExtent: 100,
         ));
   }
 }
