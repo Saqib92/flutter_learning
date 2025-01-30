@@ -43,78 +43,36 @@ class _MyHomePageState extends State<MyHomePage> {
           // the App.build method, and use it to set our appbar title.
           title: Text(widget.title, style: TextStyle(color: Colors.white)),
         ),
-        body: Padding(
-          padding: EdgeInsets.all(10),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.all(10),
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(left: 10, bottom: 10),
-                          height: 200,
-                          width: 100,
-                          color: Colors.red,
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 10, bottom: 10),
-                          height: 200,
-                          width: 100,
-                          color: Colors.red,
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 10, bottom: 10),
-                          height: 200,
-                          width: 100,
-                          color: Colors.red,
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 10, bottom: 10),
-                          height: 200,
-                          width: 100,
-                          color: Colors.blue,
-                        )
-                      ],
-                    ),
-                  ),
+        body: Center(
+          child: ListView(
+            scrollDirection: Axis.vertical,
+            children: [
+              InkWell(
+                onTap: (){
+                    print('from inkwell');
+                },
+                child: Padding(
+                  padding: EdgeInsets.all(8),
+                  child: Text('One'),
                 ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 11),
-                  height: 200,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.green,
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 11),
-                  width: 200,
-                  height: 200,
-                  color: Colors.orange,
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 11),
-                  height: 200,
-                  color: Colors.orange,
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 11),
-                  width: 200,
-                  height: 200,
-                  color: Colors.orange,
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 11),
-                  width: 200,
-                  height: 200,
-                  color: Colors.orange,
-                ),
-              ],
-            ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(8),
+                child: Text('2'),
+              ),
+              Padding(
+                padding: EdgeInsets.all(8),
+                child: Text('3'),
+              ),
+              Padding(
+                padding: EdgeInsets.all(8),
+                child: Text('4'),
+              ),
+              Padding(
+                padding: EdgeInsets.all(8),
+                child: Text('5'),
+              ),
+            ],
           ),
         ));
   }
